@@ -1,0 +1,18 @@
+// Scoped under .snk-prints-tab — stands in for Angular's per-component style encapsulation.
+.snk-prints-tab {
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+  .stat {
+    display: flex; flex-direction: column; align-items: center; padding: 1.1rem 0.5rem;
+    .n { font-size: 1.9rem; font-weight: 700; color: var(--blue); }
+    .l { color: var(--muted); font-size: 0.82rem; text-align: center; }
+  }
+  .table-card { margin-bottom: 1rem; overflow-x: auto; }
+  h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.6rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 0.8rem; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--line); }
+  td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--field); }
+  .num { text-align: right; }
+  .name { max-width: 12rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .act { text-align: right; }
+  .mini { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: var(--field); }
+}

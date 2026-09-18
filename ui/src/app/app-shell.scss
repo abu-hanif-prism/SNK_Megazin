@@ -1,0 +1,50 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 1rem 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  .wordmark {
+    pointer-events: auto;
+    max-width: 10.75rem;
+    width: 100%;
+
+    img {
+      width: 100%;
+      aspect-ratio: 10.72 / 2.6;
+    }
+  }
+}
+
+.toasts {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: min(22rem, calc(100vw - 2rem));
+}
+
+.toast {
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  animation: opacityShow 250ms ease-out;
+
+  &.error {
+    background: #c62828;
+  }
+}

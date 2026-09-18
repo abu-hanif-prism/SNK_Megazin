@@ -1,0 +1,41 @@
+// Scoped under .snk-preview — stands in for Angular's per-component style encapsulation.
+.snk-preview {
+  .sheet {
+    position: relative;
+    width: var(--sheet-w);
+    margin: 0 auto;
+    overflow: hidden;
+    background: #c5c5c5;
+    border-radius: 4px;
+    box-shadow: 0 14px 34px rgba(150, 50, 20, 0.22);
+    transition: aspect-ratio 250ms ease;
+    &.vertical { aspect-ratio: 210 / 297; }
+    &.horizontal { aspect-ratio: 297 / 210; }
+  }
+  .photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    will-change: transform;
+    &.wide { width: 100%; height: auto; }
+  }
+  .frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .hint {
+    width: 45%;
+    border-radius: 10%;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+}

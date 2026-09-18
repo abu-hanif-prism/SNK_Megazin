@@ -1,0 +1,9 @@
+/UIv2
+/api
+.DS_Store
+
+# release artifacts (rebuilt by deploy/build-release.sh; the Node tarball is re-downloaded)
+deploy/cache/
+deploy/releases/
+deploy/staging/
+deploy/devices.txt

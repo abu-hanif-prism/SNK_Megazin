@@ -1,0 +1,24 @@
+{
+  "description": "Golden print renders produced by the LEGACY pipeline (EJS imgFrame.ejs + Puppeteer screenshot of #target-div). The new client-side canvas compositor must reproduce these visually for identical inputs. Generated 2026-07-10 against session golden_ref (frames in ../inputs).",
+  "renderDimensions": { "layout1": [1000, 1500], "layout2": [1500, 1000] },
+  "photoUsed": "../inputs/photo.jpeg (1280x1139 JPEG)",
+  "legacyCssContract": {
+    "photoStyle": "scale:{scale};margin-top:{marginTop}%;margin-left:{marginLeft}%",
+    "photoFit": "object-fit: contain; object-position: center; width/height: 100%",
+    "effects": {
+      "warm": "sepia(0.3) brightness(1.1) saturate(1.2) hue-rotate(-10deg)",
+      "cool": "sepia(0.15) brightness(1.05) saturate(1.1) hue-rotate(210deg)",
+      "grayscale": "grayscale(90%)",
+      "normal": "none"
+    },
+    "frameOverlay": "absolute top:0 left:0 width:100%, object-fit:contain",
+    "background": "#c5c5c5 behind photo, #FFF frame body"
+  },
+  "cases": [
+    { "file": "14.png", "layout": "layout1", "effect": "normal", "scale": 1.5, "marginTop": 0, "marginLeft": 0, "frame": "frame-vertical.png" },
+    { "file": "15.png", "layout": "layout2", "effect": "normal", "scale": 1.5, "marginTop": 0, "marginLeft": 0, "frame": "frame-horizontal.png" },
+    { "file": "16.png", "layout": "layout1", "effect": "warm", "scale": 2, "marginTop": -5, "marginLeft": 10, "frame": "frame-vertical.png" },
+    { "file": "17.png", "layout": "layout1", "effect": "grayscale", "scale": 1, "marginTop": 0, "marginLeft": 0, "frame": "frame-vertical.png" },
+    { "file": "18.png", "layout": "layout2", "effect": "grayscale", "scale": 1.2, "marginTop": 8, "marginLeft": -12, "frame": "frame-horizontal.png" }
+  ]
+}

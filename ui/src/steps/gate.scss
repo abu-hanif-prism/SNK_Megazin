@@ -1,0 +1,23 @@
+// Scoped under .snk-gate — stands in for Angular's per-component style encapsulation.
+.snk-gate {
+  .gate {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  h3 {
+    color: #ff3d4f;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 0.75rem;
+    max-width: 26rem;
+  }
+}

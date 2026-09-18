@@ -1,0 +1,59 @@
+// Scoped under .snk-welcome-step — stands in for Angular's per-component style encapsulation.
+.snk-welcome-step {
+  .welcome {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    // gradient shows instantly while the (small) artwork loads on top
+    background: url("/assets/images/SNK_DP-03.jpg") center / cover no-repeat,
+      linear-gradient(160deg, #ff5a1f 0%, #ff8a00 55%, #d1006f 100%);
+  }
+  .actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 9dvh;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .tagline {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    text-align: center;
+    text-shadow: 0 1px 8px rgba(120, 0, 60, 0.35);
+  }
+  .upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 20rem;
+    min-height: 62px;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-white);
+    color: #ff3d4f;
+    font-size: 1.6rem;
+    font-weight: 400;
+    box-shadow: 0 12px 28px rgba(120, 0, 60, 0.35);
+    animation: gentlePulse 2.4s ease-in-out infinite;
+
+    svg { width: 1.8rem; height: 1.8rem; }
+    &:active { transform: scale(0.97); }
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}

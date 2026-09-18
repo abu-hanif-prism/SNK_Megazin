@@ -1,0 +1,141 @@
+// Scoped under .snk-queue-tab — stands in for Angular's per-component style encapsulation.
+.snk-queue-tab {
+  & {
+    display: block;
+  }
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  
+    .depth {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  }
+  
+  h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 1.25rem 0 0.5rem;
+  }
+  
+  .attention-zone h3 { color: var(--orange); }
+  
+  .job {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.6rem;
+  
+    .thumb {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex: none;
+      background: var(--field);
+    }
+  
+    .meta {
+      min-width: 0;
+      flex: 1;
+  
+      strong { display: block; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .time { color: var(--muted); font-size: 0.8rem; }
+      .why { color: var(--orange); font-size: 0.85rem; margin-top: 0.2rem; }
+    }
+  
+    .actions {
+      display: flex;
+      gap: 0.4rem;
+      flex: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  
+  .attention-job { border-color: #ffcdb3; background: #fff9f6; }
+  
+  .printing-job {
+    border-color: #bfd0f0;
+  
+    .feed {
+      margin-top: 0.45rem;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #e8effc 25%, var(--blue) 50%, #e8effc 75%);
+      background-size: 200px 100%;
+      animation: sheetFeed 1.2s linear infinite;
+    }
+  }
+  
+  .ticket {
+    flex: none;
+    width: 2.4rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+  }
+  
+  .empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .done-row {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .done-card {
+    flex: none;
+    width: 8.5rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.5rem;
+  
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 6px;
+      background: var(--field);
+    }
+  
+    .who {
+      display: block;
+      font-size: 0.82rem;
+      margin: 0.35rem 0 0.15rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  
+    .done-actions {
+      display: flex;
+      justify-content: space-between;
+  
+      .btn { padding: 0.2rem 0.3rem; min-height: 32px; font-size: 0.8rem; }
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .job {
+      flex-wrap: wrap;
+  
+      .actions { width: 100%; justify-content: flex-end; }
+    }
+  }
+}

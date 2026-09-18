@@ -1,0 +1,77 @@
+// Scoped under .snk-editor-step — stands in for Angular's per-component style encapsulation.
+.snk-editor-step {
+  .editor {
+    min-height: 100dvh;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 5rem 0.75rem 2rem; // clear the fixed header wordmark
+    background: var(--cream);
+  }
+
+  // fixed-height stage (tall enough for a vertical sheet) so the page doesn't
+  // jump when the arrows switch between vertical and horizontal frames
+  .stage {
+    position: relative;
+    width: var(--sheet-w);
+    height: calc(var(--sheet-w) * 297 / 210);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .snk-preview { width: 100%; }
+  }
+
+  // arrows sit under the sheet so they never cover the photo you're moving
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  .nav {
+    flex: none;
+    width: 3.4rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--grad);
+    color: var(--color-white);
+    box-shadow: 0 6px 16px rgba(255, 61, 79, 0.4);
+    transition: transform 150ms ease;
+
+    svg { width: 1.7rem; height: 1.7rem; }
+    &:active { transform: scale(0.9); }
+  }
+
+  .progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 5rem;
+    justify-content: center;
+
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #f1cdb8;
+      transition: width 200ms ease, background 200ms ease;
+      &.on { width: 1.4rem; border-radius: 999px; background: #ff3d4f; }
+    }
+    .count { color: var(--ink-soft); font-size: 1.1rem; }
+  }
+
+  .tip {
+    margin: 0.7rem 0 1.1rem;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+}

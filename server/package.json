@@ -1,0 +1,30 @@
+{
+  "name": "snapnkeep-server",
+  "version": "2.0.0",
+  "description": "Snapnkeep Mini backend v2 — plain Node.js, no build step",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "MOCK_CUPS=true node --watch server.js",
+    "smoke": "MOCK_CUPS=true node test/smoke.js"
+  },
+  "author": "Abid Mahmood Akash",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^12.11.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "image-size": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.11.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.0"
+  }
+}

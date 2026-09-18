@@ -1,0 +1,125 @@
+// Scoped under .snk-sessions-tab — stands in for Angular's per-component style encapsulation.
+.snk-sessions-tab {
+  .head {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+  
+  .form-card {
+    margin-bottom: 1rem;
+  
+    h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.9rem;
+  }
+  
+  .form-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .session {
+    margin-bottom: 0.9rem;
+  
+    &.active { border-color: var(--blue); }
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .info {
+    strong { font-size: 1.05rem; display: block; }
+    .sub { color: var(--muted); font-size: 0.85rem; }
+  }
+  
+  .row-actions {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .frames {
+    margin-top: 0.9rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+  
+  .frame-group label:first-child {
+    text-transform: capitalize;
+  }
+  
+  .frame-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .frame-thumb {
+    position: relative;
+    width: 3.6rem;
+    aspect-ratio: 210 / 297;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background:
+      repeating-conic-gradient(#eee 0% 25%, #fff 0% 50%) 0 0 / 12px 12px; // checkerboard: frames are transparent PNGs
+  
+    &.horizontal { width: 5.4rem; aspect-ratio: 297 / 210; }
+  
+    img { width: 100%; height: 100%; object-fit: contain; }
+  
+    .x {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  .add-frame {
+    width: 3.6rem;
+    aspect-ratio: 210 / 297;
+    border: 2px dashed var(--line);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--muted);
+    cursor: pointer;
+    margin: 0;
+  
+    &.horizontal { width: 5.4rem; aspect-ratio: 297 / 210; }
+    &.busy { opacity: 0.4; cursor: wait; }
+  
+    input { display: none; }
+  }
+}

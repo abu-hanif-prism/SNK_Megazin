@@ -1,0 +1,9 @@
+// Scoped under .snk-settings-tab — stands in for Angular's per-component style encapsulation.
+.snk-settings-tab {
+  .block { max-width: 28rem; margin-bottom: 1rem; }
+  h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.8rem; }
+  form { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+  input { max-width: 20rem; }
+  .muted { color: var(--muted); }
+  .health { display: flex; gap: 0.5rem; }
+}

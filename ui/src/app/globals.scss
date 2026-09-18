@@ -1,0 +1,239 @@
+// Global styles — ported from UIv2 theme (same look, same font, same colors).
+@font-face {
+  font-family: "Aminute";
+  src: url("/assets/fonts/Aminute.woff") format("woff"),
+    url("/assets/fonts/Aminute.woff2") format("woff2"),
+    url("/assets/fonts/Aminute.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --font-primary: "Aminute", sans-serif;
+  --color-gray: #cfcfcf;
+  --color-primary: #265bc4;
+  --color-secondary: #fc5400;
+  --color-black: #000;
+  --color-white: #fff;
+  --shadow-card: 0px 4px 7.1px 0px rgba(0, 0, 0, 0.1);
+
+  // guest flow (sunset brand gradient, matches the splash artwork)
+  --grad: linear-gradient(135deg, #ff7a00 0%, #ff3d4f 55%, #d1006f 100%);
+  --cream: #fff7f0;
+  --ink: #3a1d12;
+  --ink-soft: #9a6f5b;
+  --sheet-w: min(440px, calc(100vw - 1.5rem)); // print preview: nearly full screen width
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  font-weight: 100;
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+// shared pill button (welcome/editor/confirm all use this shape)
+.pill-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 14.56rem;
+  min-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1.25rem;
+  border: none;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+
+  &.solid {
+    background: var(--color-primary);
+    color: var(--color-white);
+
+    &:disabled {
+      background-color: #265bc48f;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// guest flow buttons: one primary action per screen, one quiet secondary
+.btn-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 20rem;
+  min-height: 58px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 999px;
+  background: var(--grad);
+  color: var(--color-white);
+  font-size: 1.45rem;
+  font-weight: 400;
+  box-shadow: 0 10px 24px rgba(255, 61, 79, 0.35);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+
+  svg { width: 1.5rem; height: 1.5rem; }
+  &:active { transform: scale(0.97); box-shadow: 0 5px 12px rgba(255, 61, 79, 0.3); }
+  &:disabled { opacity: 0.45; box-shadow: none; cursor: not-allowed; }
+}
+
+.btn-ghost {
+  display: block;
+  margin: 0.4rem auto 0;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+@keyframes opacityShow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// ---------------------------------------------------------------------------
+// Console (admin) design system — ops surface, system font, brand accents.
+// Orange is reserved for "needs attention" / live signals only.
+// ---------------------------------------------------------------------------
+.snk-console {
+  --ink: #16233c;
+  --field: #f2f4f8;
+  --card: #ffffff;
+  --line: #e3e7ee;
+  --muted: #71809b;
+  --blue: #265bc4;
+  --orange: #fc5400;
+  --green: #1e8e3e;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+
+  h1, h2, h3, h4 { font-family: inherit; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.92rem;
+    font-family: inherit;
+    min-height: 40px; // touch target
+
+    &.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    &.danger { color: #b3261e; border-color: #ecc8c5; }
+    &.attention { background: var(--orange); border-color: var(--orange); color: #fff; }
+    &.ghost { border-color: transparent; background: transparent; color: var(--blue); }
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+  }
+
+  .icon-btn {
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.78rem;
+    background: var(--field);
+    color: var(--muted);
+
+    &.queued { background: #e8effc; color: var(--blue); }
+    &.printing { background: #e8effc; color: var(--blue); }
+    &.completed { background: #e6f2e8; color: var(--green); }
+    &.attention { background: #ffece3; color: var(--orange); }
+    &.failed, &.canceled { background: #f9e7e6; color: #b3261e; }
+  }
+
+  input[type="text"], input[type="password"], input[type="number"], input[type="date"] {
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+    background: #fff;
+    color: var(--ink);
+    outline-color: var(--blue);
+    width: 100%;
+  }
+
+  label { font-size: 0.82rem; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+}
+
+@keyframes sheetFeed {
+  from { background-position: -200px 0; }
+  to { background-position: 200px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

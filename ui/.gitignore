@@ -1,0 +1,21 @@
+# Next.js build output
+/.next
+/out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*

@@ -1,0 +1,13 @@
+ if you want to keep your user as the owner but allow Nginx to read the files:
+
+sudo chown -R snapnkeep:www-data ~/servers/api/public
+sudo chmod -R 755 ~/servers/api/public
+
+
+Ensure Nginx Has Access
+Nginx also needs access to parent directories. Run:
+
+chmod +x ~
+chmod +x ~/servers
+chmod +x ~/servers/api
+chmod +x ~/servers/api/public
